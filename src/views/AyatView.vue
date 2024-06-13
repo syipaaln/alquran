@@ -1,14 +1,23 @@
 <template>
-    <div v-if="surah">
-        <h2>{{ surah.nama }}</h2>
-        <ul>
-            <li v-for="ayat in ayats" :key="ayat.nomor">
-                <div>{{ ayat.nomorAyat }}. {{ ayat.teksArab }}</div>
-                <div>{{ ayat.teksLatin }}</div>
-                <div>{{ ayat.teksIndonesia }}</div>
-            </li>
-        </ul>
+    <div class="text-2xl text-center mt-5">{{ surah.nama }}</div>
+    <div class="text-xl text-center font-bold">{{ surah.namaLatin }}</div>
+    <div class="flex justify-center items-center">
+        <div class="text-sm">{{ surah.tempatTurun }}</div>
+        <div class="text-md font-medium mx-5">{{ surah.arti }}</div>
+        <div class="text-sm">{{ surah.jumlahAyat }} Ayat</div>
     </div>
+    <ul class="px-36">
+        <li v-for="ayat in ayats" :key="ayat.nomor" class="my-10 border-b border-neutral-content">
+            <div class="flex justify-between items-center">
+                <div class="">{{ ayat.nomorAyat }}.</div>
+                <div class="text-2xl">{{ ayat.teksArab }}</div>
+            </div>
+            <div class="ml-10 my-5">
+                <div class="text-lg font-medium">{{ ayat.teksLatin }}</div>
+                <div>{{ ayat.teksIndonesia }}</div>
+            </div>
+        </li>
+    </ul>
 </template>
 
 <script setup>
