@@ -23,7 +23,7 @@
                 <div class="text-2xl">{{ ayat.teksArab }}</div>
             </div>
             <div class="flex items-center mt-3">
-                <button @click="playAyatAudio(ayat)" class="">
+                <button @click="playAyatAudio(ayat)">
                     <i :class="{'bi bi-play-circle': !ayat.isPlaying, 'bi bi-pause-circle': ayat.isPlaying}" class="text-xl hover:opacity-70"></i>
                 </button>
                 <div class="ml-3 text-lg font-medium">{{ ayat.teksLatin }}</div>
@@ -32,7 +32,6 @@
         </li>
     </ul>
     <audio ref="audioPlayer" class="hidden" controls>
-        <!-- <source :src="audioUrl" type="audio/mp3"> -->
         Your browser does not support the audio element.
     </audio>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <SuratList :qurans="qurans" @selectSurah="handleSelectSurah" />
+    <surat-list :qurans="qurans" @selectSurah="handleSelectSurah" />
 </template>
 
 <script setup>
@@ -10,7 +10,6 @@ import { useRouter } from 'vue-router';
 
 const qurans = ref([]);
 const router = useRouter();
-
 
 const handleSelectSurah = (surah) => {
     router.push(`/surah/${surah.nomor}`);
